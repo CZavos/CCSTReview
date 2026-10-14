@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive Cisco CCST networking practice quiz with detailed feedback and student notes.">
+  <title>Cisco CCST Network Practice Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-mark" aria-hidden="true">CCST</div>
+      <div><p class="eyebrow">NETWORKING PRACTICE</p><h1>Cisco CCST Network Practice Quiz</h1></div>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="intro card">
+      <div>
+        <p class="eyebrow">PRACTICE • FEEDBACK • NOTES</p>
+        <h2>Learn from every answer.</h2>
+        <p>Answer each question, then review explanations for every option. If you skip a question, you can still reveal the answer and study the feedback. Take notes as you go.</p>
+      </div>
+      <div class="intro-actions">
+        <button id="startBtn" class="button primary">Start / Resume</button>
+        <button id="resetBtn" class="button secondary">Start over</button>
+      </div>
+    </section>
+
+    <section class="progress-section" aria-label="Quiz progress">
+      <div class="progress-label"><span id="progressText">Question 1 of 37</span><span id="scoreText">Answered: 0 · Correct: 0</span></div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+    </section>
+
+    <section id="quizCard" class="card quiz-card" aria-live="polite">
+      <div class="question-topline">
+        <span id="questionType" class="type-pill">Multiple choice</span>
+        <span id="questionNumber" class="question-number">Question 1</span>
+      </div>
+      <h2 id="questionPrompt">Loading question…</h2>
+      <p id="questionInstructions" class="instructions"></p>
+      <div id="answerArea" class="answer-area"></div>
+
+      <div class="answer-actions">
+        <button id="checkBtn" class="button primary">Check answer &amp; show feedback</button>
+        <button id="skipBtn" class="button secondary">Skip and show answer</button>
+      </div>
+
+      <section id="feedbackPanel" class="feedback-panel hidden" aria-live="polite">
+        <div id="resultBanner" class="result-banner"></div>
+        <h3>Correct answer</h3>
+        <p id="correctAnswerText" class="correct-answer-text"></p>
+        <h3>Feedback for every option</h3>
+        <div id="allFeedback" class="all-feedback"></div>
+        <div class="source-explanation">
+          <h3>Explanation from the study material</h3>
+          <p id="sourceExplanation"></p>
+        </div>
+      </section>
+
+      <section class="notes-section">
+        <label for="notesBox">My notes for this question</label>
+        <textarea id="notesBox" rows="4" placeholder="Write what you learned, a memory tip, or a question to revisit…"></textarea>
+        <div class="notes-meta"><span id="savedStatus">Notes stay in this browser on this device.</span><button id="clearNoteBtn" class="text-button">Clear this note</button></div>
+      </section>
+
+      <div class="navigation">
+        <button id="prevBtn" class="button secondary">← Previous</button>
+        <div class="nav-right"><button id="nextBtn" class="button primary">Next →</button></div>
+      </div>
+    </section>
+
+    <section id="summaryCard" class="card summary-card hidden">
+      <p class="eyebrow">PRACTICE COMPLETE</p>
+      <h2>Review your progress</h2>
+      <div class="summary-stats">
+        <div><strong id="finalCorrect">0</strong><span>Correct</span></div>
+        <div><strong id="finalAnswered">0</strong><span>Answered</span></div>
+        <div><strong id="finalPercent">0%</strong><span>Accuracy</span></div>
+      </div>
+      <p id="summaryMessage"></p>
+      <div class="summary-actions">
+        <button id="reviewMissedBtn" class="button primary">Review missed / skipped</button>
+        <button id="downloadNotesBtn" class="button secondary">Download my notes</button>
+        <button id="downloadResultsBtn" class="button secondary">Download results</button>
+        <button id="backToQuizBtn" class="button secondary">Back to questions</button>
+      </div>
+    </section>
+    <p class="footer-note">Your answers and notes are saved locally in this browser. Use “Download my notes” to keep a separate copy or move your notes to another device.</p>
+  </main>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
